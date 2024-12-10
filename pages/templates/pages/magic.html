@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Magic Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .home-button {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #ddd;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px; 
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .green { background-color: #28a745; }
+        .red { background-color: #dc3545; }
+        .blue { background-color: #007bff; }
+        .yellow { background-color: #ffc107; }
+        .purple { background-color: #6f42c1; }
+        .pink { background-color: #e83e8c; }
+        .brown { background-color: #964b00; }
+        .orange { background-color: #fd7e14; }
+        .dark-blue { background-color: #00008b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'home' %}" class="home-button">Back to Home</a>
+    </div>
+    
+    <div class="circle-container">
+        <div class="circle {% if random_num1 == 1 %}green{% elif random_num1 == 2 %}red{% elif random_num1 == 3 %}blue{% elif random_num1 == 4 %}yellow{% elif random_num1 == 5 %}purple{% elif random_num1 == 6 %}pink{% elif random_num1 == 7 %}brown{% elif random_num1 == 8 %}orange{% elif random_num1 == 9 %}dark-blue{% endif %}">
+            {{ random_num1 }}
+        </div>
+        <div class="circle {% if random_num2 == 1 %}green{% elif random_num2 == 2 %}red{% elif random_num2 == 3 %}blue{% elif random_num2 == 4 %}yellow{% elif random_num2 == 5 %}purple{% elif random_num2 == 6 %}pink{% elif random_num2 == 7 %}brown{% elif random_num2 == 8 %}orange{% elif random_num2 == 9 %}dark-blue{% endif %}">
+            {{ random_num2 }}
+        </div>
+        <div class="circle {% if random_num3 == 1 %}green{% elif random_num3 == 2 %}red{% elif random_num3 == 3 %}blue{% elif random_num3 == 4 %}yellow{% elif random_num3 == 5 %}purple{% elif random_num3 == 6 %}pink{% elif random_num3 == 7 %}brown{% elif random_num3 == 8 %}orange{% elif random_num3 == 9 %}dark-blue{% endif %}">
+            {{ random_num3 }}
+        </div>
+    </div>
+</body>
+</html>
